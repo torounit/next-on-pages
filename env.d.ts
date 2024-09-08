@@ -2,4 +2,5 @@
 // by running `wrangler types --env-interface CloudflareEnv env.d.ts`
 
 interface CloudflareEnv {
+	NEXT_ON_PAGES: KVNamespace
 }
