@@ -11,5 +11,6 @@ export async function GET(request: NextRequest) {
 	await myKv.put('count', String(count + 1));
 	await new Promise(resolve => setTimeout(resolve, 3000))
 	const response = new Response(`Count: ${count + 1}`);
+	response.headers.set('Cache-Control', 'max-age=60, stale-while-revalidate=60')
 	return response;
 }
